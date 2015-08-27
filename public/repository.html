@@ -1,0 +1,28 @@
+<h2>Repository {{repository.name}}</h2>
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>Tag</td>
+      <td>Created</td>
+      <td>ID</td>
+      <td>Docker Version</td>
+      <td>Parent</td>
+    </tr>
+  </thead>
+  <tbody>
+    <!--<tr ng-repeat="tag in repository.tags" ng-init="tag_vaule=repository.tag_values[tag]; tag_value.history[tag_value.history.length - 1].v1Compatibility">-->
+    <tr ng-repeat="tag in repository.tags" ng-init="tag_value = repository.tag_values[tag]; v1s=tag_value.history">
+      
+      <td><input type="checkbox"></input></td>
+      <td>{{tag}}</td>
+      <td>{{v1s[0].v1Compatibility.created}}</td>
+      <td>{{v1s[0].v1Compatibility.id}}</td>
+      <td>{{v1s[0].v1Compatibility.docker_version}}</td>
+      <td>{{v1s[0].v1Compatibility.parent}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--{{repository | json}}-->

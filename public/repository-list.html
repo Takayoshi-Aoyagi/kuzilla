@@ -1,0 +1,8 @@
+<h2>Repositories</h2>
+
+<input type="text" ng-model="search_text"></input>
+<button ng-click="retreive()">検索</button>
+
+<ul>
+  <li ng-repeat="repository in repositories"><a ng-href="#/repository?name={{repository}}">{{repository}}</a></li>
+</ul>

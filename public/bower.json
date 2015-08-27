@@ -1,0 +1,20 @@
+{
+  "name": "public",
+  "version": "0.0.0",
+  "authors": [
+    "Takayoshi Aoyagi <takayoshi_aoyagi@waku-2.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "~1.4.4",
+    "angular-route": "~1.4.4",
+    "angularjs": "~1.4.4"
+  }
+}

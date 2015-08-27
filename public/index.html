@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+    <title></title>
+  </head>
+  <body ng-app="app" ng-controller="RepositoryListController">
+
+    <h1>Docker Registy WebUI</h1>
+
+    <div ng-view></div>
+
+    <script src="bower_components/angularjs/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="javascripts/registry-app.js"></script>
+    <script src="javascripts/services.js"></script>
+    <script src="javascripts/repository-list-controller.js"></script>
+    <script src="javascripts/repository-controller.js"></script>
+  </body>
+</html>
