@@ -1,8 +1,23 @@
 <h2>Repositories</h2>
 
-<input type="text" ng-model="search_text"></input>
-<button ng-click="retreive()">検索</button>
+<div>
+  <input type="text" ng-model="search_text"></input>
+  <button ng-click="retreive()">検索</button>
+</div>
 
-<ul>
-  <li ng-repeat="repository in repositories"><a ng-href="#/repository?name={{repository}}">{{repository}}</a></li>
-</ul>
+<div ng-repeat="(group, v) in repositories" style="margin:10px;">
+  <span style="font-weight:bold;">{{group}}</span>
+  <table>
+    <tbody>
+      <tr ng-repeat="n in v">
+	<td><input type="checkbox"></input></td>
+	<td><a ng-href="#/repository?name={{n.fullname}}">{{n.name}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <button>Delete selected repositories</button>
+</div>
+<!--{{ repositories | json}}-->
