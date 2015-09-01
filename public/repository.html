@@ -4,23 +4,23 @@
   <thead>
     <tr>
       <td></td>
-      <td>Tag</td>
-      <td>Created</td>
-      <td>ID</td>
-      <td>Docker Version</td>
-      <td>Parent</td>
+      <th ng-init="sortReverse=false" ng-click="sortType='tag';sortReverse=!sortReverse">Tag</th>
+      <th ng-init="sortReverse=false" ng-click="sortType='t.created';sortReverse=!sortReverse">Created</th>
+      <th>ID</th>
+      <th>Docker Version</th>
+      <th>Parent</th>
     </tr>
   </thead>
   <tbody>
     <!--<tr ng-repeat="tag in repository.tags" ng-init="tag_vaule=repository.tag_values[tag]; tag_value.history[tag_value.history.length - 1].v1Compatibility">-->
-    <tr ng-repeat="tag in repository.tags" ng-init="tag_value = repository.tag_values[tag]; v1s=tag_value.history">
+    <tr ng-repeat="tag in repository.tags | orderBy:sortType:sortReverse:paginate" ng-init="tag_value = repository.tag_values[tag]; v1s=tag_value.history; t=v1s[0].v1Compatibility;">
       
       <td><input type="checkbox"></input></td>
       <td>{{tag}}</td>
-      <td>{{v1s[0].v1Compatibility.created | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-      <td>{{v1s[0].v1Compatibility.id}}</td>
-      <td>{{v1s[0].v1Compatibility.docker_version}}</td>
-      <td>{{v1s[0].v1Compatibility.parent}}</td>
+      <td>{{t.created | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+      <td>{{t.id}}</td>
+      <td>{{t.docker_version}}</td>
+      <td>{{t.parent}}</td>
     </tr>
   </tbody>
 </table>
