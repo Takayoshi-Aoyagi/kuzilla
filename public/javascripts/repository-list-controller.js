@@ -31,5 +31,8 @@ Controllers.controller('RepositoryListController', ['$scope', '$routeParams', 'R
 	console.log($scope.search_text);
 	alert("TODO: search repository");
     };
-    
+
+    $scope.delete = function () {
+	alert("TODO: delete repositories");
+    };
 }]);

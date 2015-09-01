@@ -4,4 +4,7 @@ Controllers.controller('RepositoryController', ['$scope', '$routeParams', 'Repos
 
     $scope.repository = Repository.get({name: name});
 
+    $scope.delete = function () {
+	alert("TODO: Delete selected tags");
+    };
 }]);
