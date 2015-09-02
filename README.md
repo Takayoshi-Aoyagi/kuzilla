@@ -3,7 +3,7 @@
 *Kuzilla* is a simple viewer for Docker Registry 2.0.
 
 This repository contains the web frontend, written in AngularJS.
-And alse contains REST API, written in node.js with express
+And also contains REST API, written in node.js with express
 
 ## Requirement
 
