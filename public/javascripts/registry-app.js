@@ -1,6 +1,7 @@
 var app = angular.module('app', [
     'ngRoute',
     'ngResource',
+    'angular-loading-bar',
     'Controllers'
 ]);
 

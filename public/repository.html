@@ -12,7 +12,6 @@
     </tr>
   </thead>
   <tbody>
-    <!--<tr ng-repeat="tag in repository.tags" ng-init="tag_vaule=repository.tag_values[tag]; tag_value.history[tag_value.history.length - 1].v1Compatibility">-->
     <tr ng-repeat="tag in repository.tags | orderBy:sortType:sortReverse:paginate" ng-init="tag_value = repository.tag_values[tag]; v1s=tag_value.history; t=v1s[0].v1Compatibility;">
       
       <td><input type="checkbox"></input></td>

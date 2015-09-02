@@ -1,12 +1,29 @@
 var express = require('express');
 var router = express.Router();
 var util = require('util');
+var url = require('url');
 var rest = require('restler');
 var async = require('async');
 
-var BASE_URL = 'http://54.65.213.68:13245/v2';
+function getBaseUrl() {
+    var base = process.env.BASE_URL,
+	urlv2,
+	len, x;
+    urlv2 = url.resolve(base, '/v2');
+    x = url.parse(urlv2);
+    if (!x.protocol || !x.hostname || !x.port || !x.pathname) {
+	console.log(x);
+	console.log(util.format("Invalid URL for Registry API [%s]", base));
+	process.exit(1);
+    }
+    console.log(util.format("API URL [%s]", urlv2));
+    return urlv2;
+}
+
+var BASE_URL = getBaseUrl();
 
 router.get('/repositories', function(req, res) {
+    console.log(BASE_URL)
     rest.get(BASE_URL + '/_catalog').on('complete', function (result) {
 	res.status(200).send(result.repositories);
     });

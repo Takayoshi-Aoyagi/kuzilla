@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
+    "angular-loading-bar": "~0.8.0",
     "angular-resource": "~1.4.4",
     "angular-route": "~1.4.4",
     "angularjs": "~1.4.4"
